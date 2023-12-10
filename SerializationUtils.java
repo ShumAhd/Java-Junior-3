@@ -10,7 +10,7 @@ import java.util.UUID;
  */
 public class SerializationUtils {
   /**
-   * Сохраняет объект в файл с уникальным именем.
+   * Сохраняет объект в файл с уникальным именем
    *
    * @param object Сериализуемый объект.
    */
