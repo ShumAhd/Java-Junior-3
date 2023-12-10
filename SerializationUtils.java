@@ -1,14 +1,20 @@
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.UUID;
 
 /**
- * Утилиты для сериализации и десериализации объектов.
+ * Сериализации и десериализации объектов.
  */
 public class SerializationUtils {
 
   /**
    * Сохраняет объект в файл с уникальным именем.
-   *
    * @param object Сериализуемый объект.
    * @return
    */
@@ -28,7 +34,6 @@ public class SerializationUtils {
 
   /**
    * Загружает объект из файла по указанному имени и удаляет файл.
-   *
    * @param fileName Имя файла.
    * @return Загруженный объект или null в случае ошибки.
    */
@@ -51,7 +56,6 @@ public class SerializationUtils {
 
   /**
    * Удаляет файл с указанным именем.
-   *
    * @param fileName Имя файла для удаления.
    */
   private static void deleteFile(String fileName) {
@@ -65,12 +69,10 @@ public class SerializationUtils {
 
   /**
    * Пример
-   *
    * @param args
    */
   public static void main(String[] args) {
     // Пример использования
-
 
     MyClass obj = new MyClass(42, "Hello, Serialization!");
     String fileName = saveToFile(obj);
@@ -87,23 +89,17 @@ public class SerializationUtils {
  * Пример класса, реализующего интерфейс Serializable.
  */
 class MyClass implements Serializable {
+
   private int someData;
   private String someString;
 
-  /**
-   * Конструктор класса.
-   *
-   * @param someData   Целочисленное значение.
-   * @param someString Строковое значение.
-   */
+
   public MyClass(int someData, String someString) {
     this.someData = someData;
     this.someString = someString;
   }
 
-  /**
-   * @return Строковое представление объекта.
-   */
+
   @Override
   public String toString() {
     return "MyClass{" +
