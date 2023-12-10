@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.UUID;
 
 /**
- * Сериализации и десериализации объектов.
+ * Сериализации и десериализации объектов
  */
 public class SerializationUtils {
 
