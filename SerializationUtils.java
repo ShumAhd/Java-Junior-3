@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -50,4 +51,18 @@ public class SerializationUtils {
     }
     return null;
   }
+  /**
+   * Удаляет файл с указанным именем.
+   *
+   * @param fileName Имя файла для удаления.
+   */
+  private static void deleteFile(String fileName){
+    File file = new File(fileName);
+    if (file.delete()){
+      System.out.println("Файл успешно удален: " + fileName);
+    }else {
+      System.out.println("Не удалось удалить файл: " + fileName);
+    }
+  }
+
 }
